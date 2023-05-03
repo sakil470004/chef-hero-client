@@ -9,6 +9,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Main from './layout/Main';
 import Home from './pages/Home';
 import ChefDetails from './pages/ChefDetails';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import AuthProvider from './providers/AuthProvider';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,12 +24,22 @@ const router = createBrowserRouter([
       {
         path: '/chef/:id',
         element: <ChefDetails />
+      },
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/register',
+        element: <Register />
       }
     ]
   },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

@@ -2,7 +2,7 @@ import { Col,  Row } from "react-bootstrap";
 import './Footer.css'
 function Footer() {
     return (
-      <div className="footer px-2">
+      <div className="footer px-2 mt-5">
         <Row>
           <Col md="4">
             <h4>Follow Us</h4>
