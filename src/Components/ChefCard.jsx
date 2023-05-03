@@ -13,8 +13,7 @@ function ChefCard({ id }) {
             .then(data => setChef(data))
     }, [])
     return (
-
-        <Col>
+   <Col>
             <Card>
                 <Card.Img variant="top" src={chef?.imageLink} />
                 <Card.Body>
@@ -22,7 +21,7 @@ function ChefCard({ id }) {
                     <Card.Text>
                         <small>Hi I am
                             <span className='text-danger'> {chef.chefName}</span>
-                            . Good to See you here, I have <span className='text-danger'> {chef.yearOfExperience}</span> year Experience. I made <span className='text-danger'> {chef.numberOfRecipes}</span> types of recipes.</small>
+                            . Good to See you here, I have <span className='text-danger'> {chef.yearOfExperience}</span> year Experience. I made <span className='text-danger'> {chef.numberOfRecipes} </span> types of recipes.</small>
                     </Card.Text>
                     <h4><LoveIcon className="me-2" /> {chef.likes}</h4>
                     <Link to={`/chef/${id}`}><Button
