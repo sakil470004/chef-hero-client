@@ -1,26 +1,34 @@
+import { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import LoveIcon from '../assets/icons/LoveIcon';
+import { Button } from 'react-bootstrap';
 
-function ChefCard() {
+function ChefCard({ id }) {
+    const [chef, setChef] = useState({});
+    useEffect(() => {
+        fetch(`http://localhost:5000/chef/${id}`)
+            .then(res => res.json())
+            .then(data => setChef(data))
+    }, [])
     return (
-        <Row xs={1} md={2} className="g-4">
-            {Array.from({ length: 4 }).map((_, idx) => (
-                <Col>
-                    <Card>
-                        <Card.Img variant="top" src="holder.js/100px160" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This is a longer card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit
-                                longer.
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            ))}
-        </Row>
+
+        <Col>
+            <Card>
+                <Card.Img variant="top" src={chef?.imageLink} />
+                <Card.Body>
+                    <Card.Title>{chef?.chefName}</Card.Title>
+                    <Card.Text>
+                        <small>Hi I am  
+                        <span className='text-danger'> {chef.chefName}</span>
+                        . Good to See you here, I have <span className='text-danger'> {chef.yearOfExperience}</span> year Experience.</small>
+                    </Card.Text>
+                    <h4><LoveIcon className="me-2"/> {chef.likes}</h4>
+                    <Button variant="outline-secondary"></Button>
+                </Card.Body>
+            </Card>
+        </Col>
+
     );
 }
 
