@@ -6,10 +6,22 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Main from './layout/Main';
+import Home from './pages/Home';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <Main />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path:'/chef/:id',
+        
+      }
+    ]
   },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
