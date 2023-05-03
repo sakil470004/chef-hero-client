@@ -1,18 +1,41 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
 
 const Login = () => {
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const email = e.target.email.value;
-        const password = e.target.password.value;
-        console.log(name,photoUrl,email,password)
-        
+
+    const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
+
+
+    const handleSubmit = event => {
+        event.preventDefault();
+
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        signIn(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                // form.reset();
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
+
+
     return (
         <div className="mt-5">
-            <div className="row justify-content-center " style={{ minHeight:'60vh'}}>
+            <div className="row justify-content-center " style={{ minHeight: '60vh' }}>
                 <div className="col-md-5 border border-danger rounded-3 p-4 my-auto">
                     <Form onSubmit={handleSubmit}>
                         <h3 className='text-center mb-4'>Login From</h3>

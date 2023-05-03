@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 
 const Register = () => {
+    const navigate = useNavigate()
+        ;
     const [error, setError] = useState('');
     const { createUser, updateUser } = useContext(AuthContext);
     const handleSubmit = (e) => {
@@ -24,6 +26,7 @@ const Register = () => {
                 updateUser({ displayName: name, photoURL: photoUrl })
                     .then(() => {
                         console.log(loggedUser)
+                        navigate('/')
                     }).catch((error) => {
                         // An error occurred
                         // ...
