@@ -8,6 +8,7 @@ import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Main from './layout/Main';
 import Home from './pages/Home';
+import ChefDetails from './pages/ChefDetails';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,8 +19,8 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path:'/chef/:id',
-        
+        path: '/chef/:id',
+        element: <ChefDetails />
       }
     ]
   },
