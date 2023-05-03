@@ -27,7 +27,7 @@ function Footer() {
         </Row>
         <Row>
           <Col md="12">
-            <p>&copy; 2023 Chef Hero. All rights reserved.</p>
+            <p>&copy; 2023 <span className="text-danger">Chef Hero</span>. All rights reserved.</p>
           </Col>
         </Row>
       </div>

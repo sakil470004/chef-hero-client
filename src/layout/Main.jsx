@@ -9,7 +9,7 @@ const Main = () => {
         <Container>
             {/* header */}
             <MainNav/>
-            this is main layout
+            
             <Outlet />
             <Footer/>
         </Container>
