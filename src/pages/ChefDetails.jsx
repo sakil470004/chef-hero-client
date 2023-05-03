@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom';
 
 const ChefDetails = () => {
     const {id}=useParams()
-    console.log(id)
+    
     return (
         <div>
-            
+           this is chef details{id}
         </div>
     );
 };

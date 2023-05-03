@@ -8,14 +8,14 @@ function MainNav() {
     return (
         <Navbar className='px-2' bg="light" expand="lg">
 
-            <Link className='text-decoration-none' to={'/'}><h1 >Chef Hero</h1></Link>
+            <Link className='text-decoration-none text-danger' to={'/'}><h1 >Chef Hero</h1></Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ms-auto d-flex gap-3 me-3">
-                    <Link className='text-decoration-none text-info-emphasis' to={'/'}>Home</Link>
-                    <Link className='text-decoration-none text-info-emphasis' to={'/login'}>Login</Link>
-                    <Link className='text-decoration-none text-info-emphasis' to={'/blog'}>Blog</Link>
-                    <Link className='text-decoration-none text-info-emphasis' to={'/register'}>Register</Link>
+                    <Link className='text-decoration-none text-danger' to={'/'}>Home</Link>
+                    <Link className='text-decoration-none text-danger' to={'/login'}>Login</Link>
+                    <Link className='text-decoration-none text-danger' to={'/blog'}>Blog</Link>
+                    <Link className='text-decoration-none text-danger' to={'/register'}>Register</Link>
                     <div>Profile</div>
 
                 </Nav>

@@ -11,7 +11,7 @@ const Hero = () => {
     }, [])
     return (
         <div>
-            <h2 className='my-4'>Our Chefs</h2>
+            <h2 className='mt-5 text-danger'>Our Chefs</h2>
             <Row xs={1} md={2} lg={3} className="g-4">
                 {
                     chefs.map(chef => <ChefCard key={chef.id}  id={chef.id}/>)
