@@ -8,13 +8,13 @@ import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Main from './layout/Main';
 import Home from './pages/Home/Home';
-import ChefDetails from './pages/ChefDetails';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import AuthProvider from './providers/AuthProvider';
 import PrivateRoute from './routes/PrivateRoute';
 import Page404 from './pages/Page404';
 import Blog from './pages/Blog';
+import ChefDetails from './pages/ChefDetails/ChefDetails';
 const router = createBrowserRouter([
   {
     path: "/",
