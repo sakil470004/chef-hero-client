@@ -15,7 +15,7 @@ const Blog = () => {
     <div className="mt-4">
       <ReactToPdf targetRef={ref} filename="div-blue.pdf" options={options} x={.5} y={.5} scale={1}>
         {({ toPdf }) => (
-          <Button className="w-100" variant="outline-primary" onClick={toPdf}>Generate pdf</Button>
+          <Button className="w-100" variant="outline-danger" onClick={toPdf}>Generate pdf</Button>
         )}
       </ReactToPdf>
       <div className="mt-2 mb-3" ref={ref}>

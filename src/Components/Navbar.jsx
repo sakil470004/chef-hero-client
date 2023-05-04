@@ -33,7 +33,7 @@ function MainNav() {
 
                         {user && <Button
                             onClick={handleLogOUt}
-                            variant='outline-primary'>Logout</Button>}
+                            variant='danger'>Logout</Button>}
 
                     </div>
                 </Navbar.Collapse>

@@ -7,7 +7,7 @@ import {
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Main from './layout/Main';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import ChefDetails from './pages/ChefDetails';
 import Login from './pages/Login';
 import Register from './pages/Register';

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Row, Spinner } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import LoveIcon from '../assets/icons/LoveIcon';
-import ChefDetailsCard from '../Components/ChefDetailsCard';
+import LoveIcon from '../../assets/icons/LoveIcon';
+import ChefDetailsCard from './ChefDetailsCard';
 
 const ChefDetails = () => {
     const [loading, setLoading] = useState(false)

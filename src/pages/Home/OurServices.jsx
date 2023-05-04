@@ -24,7 +24,7 @@ const ServiceSection = () => {
                 <Card.Text>
                 Food delivery is a service that allows customers to order food from a restaurant or food establishment and have it delivered to their location. 
                 </Card.Text>
-                <Button variant="danger">Learn More</Button>
+                <Button variant="outline-danger">Learn More</Button>
               </Card.Body>
             </Card>
           </Col>
@@ -40,7 +40,7 @@ const ServiceSection = () => {
                 <Card.Text>
                 Catering services typically include menu planning, food preparation and presentation, delivery and set-up, and cleanup after the event. The catering company may also provide additional services such as bartending, rental of equipment and furniture, and event planning and coordination.
                 </Card.Text>
-                <Button variant="danger">Learn More</Button>
+                <Button variant="outline-danger">Learn More</Button>
               </Card.Body>
             </Card>
           </Col>
@@ -56,7 +56,7 @@ const ServiceSection = () => {
                 <Card.Text>
                 Private chefs may work full-time or part-time, depending on the needs of the client. They may also be responsible for planning menus that meet the dietary restrictions or preferences of the client, such as gluten-free, vegan, or kosher meals.
                 </Card.Text>
-                <Button variant="danger">Learn More</Button>
+                <Button variant="outline-danger">Learn More</Button>
               </Card.Body>
             </Card>
           </Col>

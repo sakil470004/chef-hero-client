@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import MainNav from '../Components/Navbar';
-import Footer from '../Components/Footer';
+import Footer from '../Components/Footer/Footer';
 import { Toaster } from 'react-hot-toast';
 
 const Main = () => {

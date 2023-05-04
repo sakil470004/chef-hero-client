@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
-import LoveIcon from '../assets/icons/LoveIcon';
-import LoveFillIcon from '../assets/icons/LoveFillIcon';
+import LoveIcon from '../../assets/icons/LoveIcon';
+import LoveFillIcon from '../../assets/icons/LoveFillIcon';
 import { toast } from 'react-hot-toast';
 
 const ChefDetailsCard = ({ recipe }) => {

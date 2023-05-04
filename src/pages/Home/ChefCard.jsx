@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
-import LoveIcon from '../assets/icons/LoveIcon';
+import LoveIcon from '../../assets/icons/LoveIcon';
 import { Button, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
