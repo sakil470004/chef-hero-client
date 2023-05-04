@@ -19,13 +19,15 @@ function ChefCard({ id }) {
     }, [])
     return (
         <Col>
-        {
-            loading && <Spinner animation="border" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </Spinner>
-        }
+            {
+                loading && <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
+            }
             {!loading && <Card>
-                <Card.Img variant="top" src={chef?.imageLink} />
+               
+                    <Card.Img variant="top" src={chef?.imageLink} />
+       
                 <Card.Body>
                     <Card.Title>{chef?.chefName}</Card.Title>
                     <Card.Text>

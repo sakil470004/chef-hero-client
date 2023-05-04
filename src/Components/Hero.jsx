@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ChefCard from './ChefCard';
 import { Row, Spinner } from 'react-bootstrap';
+import LazyLoad from 'react-lazy-load';
 
 const Hero = () => {
     const [chefs, setChefs] = useState([]);
@@ -26,9 +27,15 @@ const Hero = () => {
     return (
         <div>
             <h2 className='mt-5 mb-3 text-danger'>Our Chefs</h2>
+
             <Row xs={1} md={2} lg={3} className="g-4">
                 {
-                    chefs.map(chef => <ChefCard key={chef.id} id={chef.id} />)
+                    chefs.map(chef =>
+                        <LazyLoad key={chef.id} offset={50}>
+                            <ChefCard  id={chef.id} />
+                        </LazyLoad>
+
+                    )
                 }
 
             </Row>
