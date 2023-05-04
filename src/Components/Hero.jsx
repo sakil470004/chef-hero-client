@@ -27,12 +27,14 @@ const Hero = () => {
     return (
         <div>
             <h2 className='mt-5 mb-3 text-danger'>Our Chefs</h2>
+            <hr className="mx-auto" />
 
+            {/* using LazyLoad  */}
             <Row xs={1} md={2} lg={3} className="g-4">
                 {
                     chefs.map(chef =>
-                        <LazyLoad key={chef.id} offset={50}>
-                            <ChefCard  id={chef.id} />
+                        <LazyLoad key={chef.id} offset={500}>
+                            <ChefCard id={chef.id} />
                         </LazyLoad>
 
                     )

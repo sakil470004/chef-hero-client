@@ -3,11 +3,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
-import ActiveLink from './ActiveLink'
 import { Button, NavLink } from 'react-bootstrap';
 import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 import BiUserCircle from '../assets/icons/User';
+import ActiveLink from './ActiveLink/ActiveLink';
 
 function MainNav() {
     const { user, logOut } = useContext(AuthContext)
@@ -23,10 +23,10 @@ function MainNav() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <div className="ms-auto d-flex align-items-center gap-3 me-3">
-                        <Link to={'/'}>Home</Link>
-                        <Link to={'/blog'}>Blog</Link>
-                        {!user && <Link to={'/login'}>Login</Link>}
-                        {!user && <Link to={'/register'}>Register</Link>}
+                        <ActiveLink to={'/'}>Home</ActiveLink>
+                        <ActiveLink to={'/blog'}>Blog</ActiveLink>
+                        {!user && <ActiveLink to={'/login'}>Login</ActiveLink>}
+                        {!user && <ActiveLink to={'/register'}>Register</ActiveLink>}
                         {user?.photoURL && <img alt='profile' src={user.photoURL} width={40} height={40} className='rounded-circle' title={user?.displayName} />}
                         {/* if user image not here but user is here and it's name */}
                         {(user && !user.photoURL) && <div width={40} height={40} title={user?.displayName}><BiUserCircle /></div>}

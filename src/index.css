@@ -2,3 +2,8 @@
     color: greenyellow;
     background: #ff0000;
 }
+
+.default{
+    color: gainsboro;
+    background-color: aqua;
+}

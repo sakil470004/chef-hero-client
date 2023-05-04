@@ -22,6 +22,7 @@ const FoodWeHave = () => {
     return (
         <div>
             <h2 className='mt-5 mb-3 text-danger'>Our Popular Food</h2>
+            <hr className="mx-auto" />
             <Row xs={1} md={2} lg={3}>
 
                 {
