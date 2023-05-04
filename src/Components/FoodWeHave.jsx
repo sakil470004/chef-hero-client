@@ -28,7 +28,7 @@ const FoodWeHave = () => {
                 {
                     array.map(element =>
                     (
-                        <Col>
+                        <Col key={element.name}>
                             <Card>
                                 <Card.Img variant="top" src={element.img} />
                                 <Card.Body>
