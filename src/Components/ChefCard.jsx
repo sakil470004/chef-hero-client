@@ -2,19 +2,29 @@ import { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import LoveIcon from '../assets/icons/LoveIcon';
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function ChefCard({ id }) {
     const [chef, setChef] = useState({});
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
+        setLoading(true)
         fetch(`https://chef-hero-backend-sakil470004.vercel.app/chef/${id}`)
             .then(res => res.json())
-            .then(data => setChef(data))
+            .then(data => {
+                setChef(data)
+                setLoading(false)
+            })
     }, [])
     return (
-   <Col>
-            <Card>
+        <Col>
+        {
+            loading && <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+        }
+            {!loading && <Card>
                 <Card.Img variant="top" src={chef?.imageLink} />
                 <Card.Body>
                     <Card.Title>{chef?.chefName}</Card.Title>
@@ -30,7 +40,7 @@ function ChefCard({ id }) {
                         View Recipes
                     </Button></Link>
                 </Card.Body>
-            </Card>
+            </Card>}
         </Col>
 
     );

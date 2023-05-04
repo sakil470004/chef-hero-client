@@ -13,6 +13,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import AuthProvider from './providers/AuthProvider';
 import PrivateRoute from './routes/PrivateRoute';
+import Page404 from './pages/Page404';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,9 +34,17 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register />
+      },
+      {
+        path: '*',
+        element: <Page404 />
       }
     ]
   },
+  {
+    path: '*',
+    element: <Page404 />
+  }
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

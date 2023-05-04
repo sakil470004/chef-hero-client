@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const Login = () => {
 
@@ -26,6 +27,7 @@ const Login = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
                 // form.reset();
+                toast.success(`Login Success`)
                 navigate(from, { replace: true })
             })
             .catch(error => {
@@ -38,6 +40,8 @@ const Login = () => {
         googleLogin()
             .then((result) => {
                 const user = result.user;
+                toast.success(`Login Success`)
+
                 navigate(from, { replace: true })
 
             }).catch((error) => {
@@ -51,6 +55,7 @@ const Login = () => {
         githubLogin()
             .then((result) => {
                 const user = result.user;
+                toast.success(`Login Success`)
                 navigate(from, { replace: true })
 
             }).catch((error) => {

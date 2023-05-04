@@ -1,24 +1,38 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Row, Spinner } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import LoveIcon from '../assets/icons/LoveIcon';
+import ChefDetailsCard from '../Components/ChefDetailsCard';
 
 const ChefDetails = () => {
+    const [loading, setLoading] = useState(false)
     const { id } = useParams()
     const [chef, setChef] = useState({});
     useEffect(() => {
+        setLoading(true)
         fetch(`https://chef-hero-backend-sakil470004.vercel.app/chef/${id}`)
             .then(res => res.json())
-            .then(data => setChef(data))
+            .then(data => {
+                setChef(data)
+                setLoading(false)
+            })
     }, [])
+
+    if (loading) {
+        return <div style={{height:'100vh',display:'flex',alignItems:'center',justifyContent:'center'}}  >
+            <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </Spinner>
+        </div>
+    }
     return (
         <div className='mt-5'>
             <div className="card mb-3">
                 <div className="row g-0">
                     <div className="col-md-4">
-                        <Card.Img 
-                       style={{minHeight:'300px',  maxHeight: '400px', objectFit: 'cover' }}
-                        variant="top" src={chef.imageLink}  />
+                        <Card.Img
+                            style={{ minHeight: '300px', maxHeight: '400px', objectFit: 'cover' }}
+                            variant="top" src={chef.imageLink} />
                     </div>
                     <div className="col-md-8">
                         <Card.Body >
@@ -44,6 +58,15 @@ const ChefDetails = () => {
                         </Card.Body>
                     </div>
                 </div>
+            </div>
+            <div className='mt-5'>
+                <h3 className='text-danger mb-3'>List of My Favourite Dises</h3>
+                <Row xs={1} md={2} lg={3} className="g-4">
+                    {
+                        chef?.recipes?.map((rec, index) => <ChefDetailsCard key={index} recipe={rec} />)
+                    }
+                </Row>
+
             </div>
         </div>
     );
