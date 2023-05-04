@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAR5K62VwDzORRzHMOn64KP_AvcvUW3TG4",
-    authDomain: "chef-hero.firebaseapp.com",
-    projectId: "chef-hero",
-    storageBucket: "chef-hero.appspot.com",
-    messagingSenderId: "573398288021",
-    appId: "1:573398288021:web:163798c87344aa4e69bd9c"
+    apiKey: import.meta.env.VITE_API_KEY ,
+    authDomain: import.meta.env.VITE_AUTH_DOMAIN ,
+    projectId: import.meta.env.VITE_PROJECT_ID ,
+    storageBucket: import.meta.env.VITE_STOREAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_APP_ID ,
 };
 
 // Initialize Firebase
