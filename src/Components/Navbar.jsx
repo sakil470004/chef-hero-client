@@ -7,6 +7,7 @@ import ActiveLink from './ActiveLink'
 import { Button, NavLink } from 'react-bootstrap';
 import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
+import BiUserCircle from '../assets/icons/User';
 
 function MainNav() {
     const { user, logOut } = useContext(AuthContext)
@@ -26,10 +27,13 @@ function MainNav() {
                         <Link to={'/blog'}>Blog</Link>
                         {!user && <Link to={'/login'}>Login</Link>}
                         {!user && <Link to={'/register'}>Register</Link>}
-                        {user && <div className='d-flex justify-content-center align-items-center gap-2'>{user?.displayName} <img src={user.photoURL} width={30} height={30} className='rounded-circle' /></div>}
-                        {user && <Button 
-                        onClick={handleLogOUt}
-                        variant='outline-primary'>Logout</Button>}
+                        {user?.photoURL && <img alt='profile' src={user.photoURL} width={40} height={40} className='rounded-circle' title={user?.displayName} />}
+                        {/* if user image not here but user is here and it's name */}
+                        {(user && !user.photoURL) && <div width={40} height={40} title={user?.displayName}><BiUserCircle /></div>}
+
+                        {user && <Button
+                            onClick={handleLogOUt}
+                            variant='outline-primary'>Logout</Button>}
 
                     </div>
                 </Navbar.Collapse>

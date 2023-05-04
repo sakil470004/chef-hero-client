@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 function ChefCard({ id }) {
     const [chef, setChef] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/chef/${id}`)
+        fetch(`https://chef-hero-backend-sakil470004.vercel.app/chef/${id}`)
             .then(res => res.json())
             .then(data => setChef(data))
     }, [])

@@ -7,7 +7,7 @@ const ChefDetails = () => {
     const { id } = useParams()
     const [chef, setChef] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/chef/${id}`)
+        fetch(`https://chef-hero-backend-sakil470004.vercel.app/chef/${id}`)
             .then(res => res.json())
             .then(data => setChef(data))
     }, [])
@@ -16,7 +16,9 @@ const ChefDetails = () => {
             <div className="card mb-3">
                 <div className="row g-0">
                     <div className="col-md-4">
-                        <Card.Img variant="top" src={chef.imageLink}  />
+                        <Card.Img 
+                       style={{minHeight:'300px',  maxHeight: '400px', objectFit: 'cover' }}
+                        variant="top" src={chef.imageLink}  />
                     </div>
                     <div className="col-md-8">
                         <Card.Body >
